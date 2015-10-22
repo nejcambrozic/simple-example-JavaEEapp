@@ -1,0 +1,3 @@
+example\project\ejb\beans\UserManagerBean.class
+example\project\ejb\interfaces\UserManagerBeanRemote.class
+example\project\ejb\interfaces\UserManagerBeanLocal.class

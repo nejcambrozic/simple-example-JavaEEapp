@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: Nejc
+Class-Path: lib/example-project-jpa-0.0.1-SNAPSHOT.jar lib/mysql-conne
+ ctor-java-5.1.6.jar
+Created-By: Apache Maven
+Build-Jdk: 1.8.0_51
+

@@ -1,0 +1,26 @@
+{
+  "name": "exampleApp",
+  "homepage": "https://github.com/nejcambrozic/simple-example-JavaEEapp",
+  "authors": [
+    "Nejc Ambrozic <nejc.ambrozic.slo@gmail.com>"
+  ],
+  "description": "example angular app",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "jquery": "~2.1.4",
+    "angular-ui-router": "~0.2.15",
+    "ng-table": "~0.8.3",
+    "angular-route": "~1.4.7",
+    "angular-bootstrap": "~0.14.3",
+    "angular-resource": "~1.4.7"
+  }
+}

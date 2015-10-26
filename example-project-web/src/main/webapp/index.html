@@ -1,12 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Example Project</title>
-</head>
-<body>
-<h1>HELLO WORD</h1>
+<html ng-app="exampleApp">
+	<head>
+	    <meta charset="utf-8">
+	    <title>Example Project</title>
 
-<p>example application</p>
-</body>
+	    <!-- Load libraries-->
+       	<script src="vendor/angular/angular.min.js"></script>
+       	<script src="vendor/jquery/dist/jquery.min.js"></script>
+        <!--<script src="vendor/angular-bootstrap/ui-bootstrap.min.js"></script> 
+        <script src="vendor/angular-route/angular-route.min.js"></script> -->
+        <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+       	<script src="vendor/ng-table/dist/ng-table.min.js" ng-module="exampleApp"></script>
+		<script src="vendor/angular-resource/angular-resource.min.js"></script>
+                
+
+       	<script src="scripts/app.js"></script>  
+       	<script src="scripts/users/usersCtrl.js"></script>
+
+       	<script src="scripts/layoutCtrl.js"></script>
+      
+	</head>
+	<body>
+	    <!--[if lt IE 8]>
+	    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	    <![endif]-->
+		<div ui-view> </div>
+		
+	</body>
 </html>
+

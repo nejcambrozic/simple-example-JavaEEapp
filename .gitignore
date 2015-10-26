@@ -22,7 +22,7 @@ local.properties
 target
 .apt_generated/
 maven/
-
+node_modules/
 
 # External tool builders
 .externalToolBuilders/

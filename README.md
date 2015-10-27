@@ -11,7 +11,7 @@ mvn -version
 git --version
 ```
 
-First clone the KumuluzEE repository:
+First clone the repository:
 
 ```bash
 git clone https://github.com/nejcambrozic/simple-example-JavaEEapp.git

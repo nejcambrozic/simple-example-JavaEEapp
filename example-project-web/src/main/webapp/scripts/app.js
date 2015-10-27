@@ -8,19 +8,25 @@ var app = angular.module('exampleApp', [
 
 app.config(['$stateProvider','$urlRouterProvider','$resourceProvider', function ($stateProvider,$urlRouterProvider,$resourceProvider) {
 
- $urlRouterProvider.otherwise('/users');
+ $urlRouterProvider.otherwise('/');
 
   $stateProvider
     .state('layout',{
-      url: '/users',
+      url: '/',
       templateUrl: "scripts/layout.html",
       controller: 'layoutCtrl'
 
     })
-    .state('userDetails',{
-      url: '/:userId',
-      templateUrl: 'scripts/users/users.html',
+    .state('layout.users',{
+      url: 'users',
+      templateUrl: "scripts/users/users.html",
       controller: 'usersCtrl'
+
+    })
+    .state('layout.userDetails',{
+      url: 'users/:userId',
+      templateUrl: 'scripts/userDetails/userDetails.html',
+      controller: 'userDetailsCtrl'
     })
     
 }]);

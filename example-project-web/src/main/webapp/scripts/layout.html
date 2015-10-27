@@ -1,22 +1,6 @@
+<header id="header" ng-include="'partials/_header.html'"></header>
 
-<!--<header id="header" ng-include="'partials/_header.html'"></header>
-
-<aside id="sidebar" ng-include="'partials/_sidebar.html'"></aside>
--->
-<div>wrapper</div>
-<button ng-click="goToDetails()">GO DO DETAILS</button>
-
-
-<table ng-table="vm.tableParams" class="table" show-filter="true">
-    <tr ng-repeat="user in users" ng-click="goToDetails(user.id)">
-        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
-            {{user.firstName}}</td>
-        <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
-            {{user.username}}</td>
-    </tr>
-</table>
-
-<!--<div id="page-wrapper" >
-    <div ui-view> </div>
-    <!-- <footer id="footer" ng-include="'partials/_footer.html'"></footer> 
-</div>-->
+<div id="page-wrapper" class="container">
+	<div ui-view> </div>
+    <footer id="footer" ng-include="'partials/_footer.html'"></footer>
+</div>

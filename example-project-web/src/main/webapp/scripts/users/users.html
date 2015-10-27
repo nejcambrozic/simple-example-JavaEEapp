@@ -1,1 +1,11 @@
-<div>{{user.firstName}} {{user.lastName}}</div>
+<div>
+	<table ng-table="tableParams" class="table table-hover" show-filter="true">
+	    <tr ng-repeat="user in  $data" ng-click="goToDetails(user.id)" class='clickable-row'>
+	        <td data-title="'Username'" filter="{ username: 'text'}" sortable="'username'">
+	            {{user.username}}</td>
+	        <td title="'Email'" filter="{ email: 'text'}" sortable="'email'">
+	            {{user.email}}</td>
+	    </tr>
+	</table>
+	
+</div>

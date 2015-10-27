@@ -29,9 +29,9 @@ This application was developed on [wildfly-9.0.1.Final](http://wildfly.org/downl
 
 To create database you should have mysql server already installed. Run [exampledatabase.sql](https://gist.github.com/nejcambrozic/1c1431153cdbdac03b15) script which will generate and fill database with some data.
 
-To use preconfigured [datasource](https://gist.github.com/nejcambrozic/1c1431153cdbdac03b15) paste this in wildfly-9.0.1.Final\standalone\configuration\standalone-full.xml.
+To use preconfigured [datasource](https://gist.github.com/nejcambrozic/1c1431153cdbdac03b15) paste this in wildfly-9.0.1.Final\standalone\configuration\standalone-full.xml inside  ```<datasources>``` tag
 
-Or create new datasource and configure persistance.xml in JPA project.
+Or create new datasource and configure persistence.xml in JPA project.
 Once server is started test your created datasource connection in [http://localhost:9990/console/App.html#profile/datasources](http://localhost:9990/console/App.html#profile/datasources)
 
 ## Web application 

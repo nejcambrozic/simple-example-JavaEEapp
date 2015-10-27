@@ -9,6 +9,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
 import example.project.ejb.interfaces.UserManagerBeanLocal;
 import example.project.jpa.entities.User;
@@ -20,31 +21,46 @@ public class UserResource {
 	@EJB
 	private UserManagerBeanLocal userManager;
 
-
 	@GET
 	@Produces("application/json")
 	public Response getAllUsers() {
-		
-		List<User> users = userManager.getAllUsers(); 
-		
-		return Response.ok().entity(users).build();
+
+		try {
+
+			List<User> users = userManager.getAllUsers();
+
+			if (users == null) {
+				return Response.status(Status.NOT_FOUND).build();
+			}
+
+			return Response.ok().entity(users).build();
+
+		} catch (Exception e) {
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+		}
 	}
 
-	@GET
-	@Path("/test")
-	@Produces("application/json")
-	public Response test(){
-
-		return Response.status(Response.Status.NOT_FOUND).build();
-	}
-	
 	@GET
 	@Path("/{id}")
 	@Produces("application/json")
-	public Response getUser(@PathParam("id") int userId){
-		
-		User user = userManager.getUser(userId);
-		return Response.ok().entity(user).build();
-		
+	public Response getUser(@PathParam("id") String id) {
+
+		try {
+			int userId = Integer.parseInt(id);
+
+			User user = userManager.getUser(userId);
+
+			if (user == null) {
+				return Response.status(Status.NOT_FOUND).build();
+			}
+
+			return Response.ok().entity(user).build();
+		} catch (NumberFormatException numException) {
+			return Response.status(Status.BAD_REQUEST).entity("User id must be integer").build();
+
+		} catch (Exception e) {
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+		}
+
 	}
 }

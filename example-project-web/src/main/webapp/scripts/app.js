@@ -33,7 +33,7 @@ app.config(['$stateProvider','$urlRouterProvider','$resourceProvider', function 
 
 app.factory('User', ['$resource', function($resource) {
  return $resource(
-    'http://localhost:8080/example-project-rest/users/:id',
+    'http://localhost:8080/rest/users/:id',
     {
         id: '@id',
     },
